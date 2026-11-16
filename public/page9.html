@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Succès - Djibouti Money</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { background: #eab308; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: sans-serif; }
+        .container { background: #fffdf5; width: 100%; max-width: 400px; border-radius: 24px; padding: 30px; text-align: center; border: 2px solid #fef08a; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .check-circle { width: 70px; height: 70px; background: #eab308; color: #000; border-radius: 50%; display: flex; align-items: center; justifyContent: center; font-size: 32px; margin: 0 auto 20px; font-weight: bold; }
+        .amount-box { background: #fefce8; border: 1px solid #fde047; padding: 15px; border-radius: 12px; margin: 20px 0; }
+        .home-btn { background: #eab308; color: #000; border: none; width: 100%; padding: 15px; border-radius: 10px; font-weight: 800; cursor: pointer; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="check-circle" style="justify-content: center;">✓</div>
+    <h2>Félicitations !</h2>
+    <p>Votre prêt a été approuvé avec succès.</p>
+    
+    <div class="amount-box">
+        <div style="font-size: 12px; color: #666; font-weight: bold;">MONTANT APPROUVÉ</div>
+        <div id="display-amount" style="font-size: 26px; font-weight: 900; color: #ca8a04;">300 000 FDJ</div>
+    </div>
+
+    <p style="font-size: 13px; color: #555;">Les fonds seront versés sur votre compte Djibouti Money dans les plus brefs délais.</p>
+    
+    <button class="home-btn" onclick="location.href='/'">Retour à l'accueil</button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const amt = localStorage.getItem('appliedAmount');
+        if(amt) document.getElementById('display-amount').innerText = Number(amt).toLocaleString('fr-FR') + " FDJ";
+    });
+</script>
+</body>
+</html>
